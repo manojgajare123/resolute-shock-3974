@@ -2,6 +2,9 @@ package com.Usecases;
 
 import java.sql.Date;
 import java.util.Scanner;
+
+import com.DAO.CrimeDAO;
+import com.DAO.CrimeDAOImp;
 import com.DAO.CriminalDAo;
 import com.DAO.CriminalaDAOImpl;
 import com.bean.Crime_Info;
@@ -39,7 +42,7 @@ public class Add_crimeUsecase {
 		
 			
 			
-			CriminalDAo dao1=new CriminalaDAOImpl();
+			CrimeDAO dao1=new CrimeDAOImp();
 
 			Crime_Info crime1=new Crime_Info();
 			

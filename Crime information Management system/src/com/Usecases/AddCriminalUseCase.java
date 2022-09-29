@@ -9,7 +9,7 @@ import com.bean.Criminal_Info;
 public class AddCriminalUseCase {
 
 	
-	public static void main(String[] args) {
+	public static void Addcriminal() {
 		
 		Scanner sc= new Scanner (System.in);
 		
@@ -39,6 +39,7 @@ public class AddCriminalUseCase {
 		CriminalDAo dao=new CriminalaDAOImpl();
 
 		Criminal_Info criminal=new Criminal_Info();
+		
 		
 		criminal.setName(name);
 		criminal.setAge(age);
