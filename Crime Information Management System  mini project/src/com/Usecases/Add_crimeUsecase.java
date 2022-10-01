@@ -31,7 +31,7 @@ public class Add_crimeUsecase {
 			System.out.println("Enter crime Name : ");
 			String crime=sc.nextLine();
 			
-			System.out.println("Enter Crime Victims : ");
+			System.out.println("Enter Victims Name : ");
 			String victim=sc.nextLine();
 			
 			System.out.println("Enter Detail Description of crime: ");
