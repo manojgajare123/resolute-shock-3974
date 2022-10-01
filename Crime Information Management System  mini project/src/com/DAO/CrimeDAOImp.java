@@ -20,6 +20,7 @@ public class CrimeDAOImp implements CrimeDAO{
 	
 	@Override
 	public String AddCrime(Crime_Info crimeInfo) {
+		
 		String msg= "Not Insertd ....";
 		
 		
@@ -217,31 +218,7 @@ public class CrimeDAOImp implements CrimeDAO{
 		return msg;
 	}
 	
-	@Override
-	public String DeleteCrime(Crime_Info crimeInfo) {
-		
-       String msg="Not Updated....";
-		
-		try(Connection conn= DBUtil.provideConnection();) {
-			PreparedStatement ps = conn.prepareStatement("DELETE FROM criminfo WHERE crimId=?");
-			
-		
-			ps.setInt(1, crimeInfo.getCrimeId());
-			ps.executeUpdate();
-		
-				msg="Data deleted Successfully";
-			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		
-		
-		return msg;
-		
-	
-	}
+
 	
 	}
 	

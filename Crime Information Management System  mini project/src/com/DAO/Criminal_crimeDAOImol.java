@@ -9,6 +9,8 @@ import java.util.List;
 
 import com.Exception.Criminal_InfoExcetion;
 import com.Utility.DBUtil;
+import com.bean.Crime_Info;
+import com.bean.Criminal_Crime_Info;
 import com.bean.Criminal_Info;
 
 public class Criminal_crimeDAOImol implements Criminal_crimeDAO {
@@ -50,4 +52,55 @@ public class Criminal_crimeDAOImol implements Criminal_crimeDAO {
 	
 	}
 
+	@Override
+	public String AddCriminalCrime(int crimeid, int cid) {
+	
+		String msg = "Not Inserted .....";
+		try(Connection conn= DBUtil.provideConnection();) {
+			
+			PreparedStatement ps = conn.prepareStatement("insert into criminal_crime values(?,?)");
+			ps.setInt(1, crimeid);
+			ps.setInt(2, cid);
+			
+			int x=ps.executeUpdate();
+			
+			if(x>0) {
+				msg="Criminal crime added successfully !!";
+			}
+			else {
+				msg="Unable To add Record ...";
+			}
+		
+		}catch (SQLException e) {
+			msg=e.getMessage();
+		}
+		return msg;
+	
+	}
+
+	@Override
+	public String DeleteCriminal_crime(Criminal_Crime_Info crimeInfo) {
+		
+       String msg="Not Updated....";
+		
+		try(Connection conn= DBUtil.provideConnection();) {
+			PreparedStatement ps = conn.prepareStatement("DELETE FROM Criminal_crime WHERE cId=?");
+			
+		
+			ps.setInt(1, crimeInfo.getCrimeId());
+			ps.executeUpdate();
+		
+				msg="Data deleted Successfully";
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		return msg;
+		
+	
+	}
 }

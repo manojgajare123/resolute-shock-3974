@@ -164,31 +164,7 @@ try (Connection conn= DBUtil.provideConnection()){
 		return msg;
 	}
 
-	@Override
-	public String DeleteCriminal(Criminal_Info criminalInfo) {
-		
-       String msg="Not Updated....";
-		
-		try(Connection conn= DBUtil.provideConnection();) {
-			PreparedStatement ps = conn.prepareStatement("DELETE FROM criminal WHERE Cid=?");
-			
-		
-			ps.setInt(1, criminalInfo.getCid());
-			ps.executeUpdate();
-		
-				msg="Data deleted Successfully";
-			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		
-		
-		return msg;
-		
-	
-	}
+
 
 		
 }

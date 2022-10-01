@@ -1,7 +1,5 @@
 package com.bean;
 
-import java.sql.Date;
-
 public class Crime_Info {
 
 private int	CrimeId;           
