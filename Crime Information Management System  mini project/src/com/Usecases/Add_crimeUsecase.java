@@ -21,7 +21,7 @@ public class Add_crimeUsecase {
 			Scanner sc= new Scanner (System.in);
 			
 			
-			System.out.println("Enter Crime Date: ");
+			System.out.println("Enter Crime Date YYYY-MM-DD Format: ");
 			String date1=sc.nextLine();
 			
 			System.out.println("Enter Crime Place : ");
