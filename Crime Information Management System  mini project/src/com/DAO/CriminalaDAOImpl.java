@@ -84,7 +84,7 @@ public class CriminalaDAOImpl  implements CriminalDAo {
 			
 			
 			if(Criminals.size() == 0)
-				throw new Criminal_InfoExcetion("No Student found..");
+				throw new Criminal_InfoExcetion("No Criminal found..");
 			
 			
 			
